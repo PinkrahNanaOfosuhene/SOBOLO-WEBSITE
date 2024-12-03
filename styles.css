@@ -1,0 +1,90 @@
+/* General Reset */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    /* Removes default spacing and padding */
+    text-decoration: none;
+    /* Removes underlines from links */
+    font-family: Arial, sans-serif;
+    /* Sets a clean font style */
+}
+
+/* Body Styling */
+body {
+    background-color: #fdfdfd;
+    /* Light background color */
+    color: #333;
+    /* Dark gray text for readability */
+    line-height: 1.6;
+    /* Improves text spacing */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background: #d91458;
+    /* Sobolo-themed dark pink color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    /* Large title text */
+}
+
+nav a {
+    color: white;
+    /* White text for navigation links */
+    margin: 0 10px;
+    /* Spacing between links */
+    padding: 5px;
+    border-radius: 5px;
+    /* Rounded edges for links */
+}
+
+nav a:hover {
+    background-color: #c4124e;
+    /* Darker pink background on hover */
+}
+
+/* Main Section Styling */
+main {
+    padding: 20px;
+    /* Adds space around the content */
+    text-align: center;
+}
+
+/* Product Section */
+section {
+    margin: 20px auto;
+    /* Space around sections */
+    max-width: 600px;
+    /* Limits width of sections */
+    border: 1px solid #ccc;
+    /* Adds a light gray border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 15px;
+}
+
+section img {
+    max-width: 100%;
+    /* Makes images responsive */
+    border-radius: 10px;
+    /* Rounded edges */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background: #d91458;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    /* Sticks footer to the bottom of the page */
+    bottom: 0;
+    width: 100%;
+}
