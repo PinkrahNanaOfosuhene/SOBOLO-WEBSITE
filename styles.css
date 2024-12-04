@@ -1,90 +1,83 @@
-/* General Reset */
-body, h1, h2, h3, p, a {
-    margin: 0;
-    padding: 0;
-    /* Removes default spacing and padding */
-    text-decoration: none;
-    /* Removes underlines from links */
-    font-family: Arial, sans-serif;
-    /* Sets a clean font style */
-}
-
-/* Body Styling */
 body {
-    background-color: #fdfdfd;
-    /* Light background color */
-    color: #333;
-    /* Dark gray text for readability */
-    line-height: 1.6;
-    /* Improves text spacing */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Header Styling */
 header {
-    background: #d91458;
-    /* Sobolo-themed dark pink color */
+    background-color: #f4a261;
     color: white;
+    padding: 1rem;
     text-align: center;
-    padding: 10px 0;
 }
 
-header h1 {
-    font-size: 2.5em;
-    /* Large title text */
-}
-
-nav a {
+header nav a {
     color: white;
-    /* White text for navigation links */
-    margin: 0 10px;
-    /* Spacing between links */
-    padding: 5px;
-    border-radius: 5px;
-    /* Rounded edges for links */
+    margin: 0 1rem;
+    text-decoration: none;
 }
 
-nav a:hover {
-    background-color: #c4124e;
-    /* Darker pink background on hover */
-}
-
-/* Main Section Styling */
 main {
-    padding: 20px;
-    /* Adds space around the content */
+    padding: 2rem;
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.order-item img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    margin: 0 0 0.5rem;
+}
+
+.item-details label {
+    font-weight: bold;
+}
+
+#totalPriceContainer {
     text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
 }
 
-/* Product Section */
-section {
-    margin: 20px auto;
-    /* Space around sections */
-    max-width: 600px;
-    /* Limits width of sections */
-    border: 1px solid #ccc;
-    /* Adds a light gray border */
-    border-radius: 10px;
-    /* Rounded corners */
-    padding: 15px;
+button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-section img {
-    max-width: 100%;
-    /* Makes images responsive */
-    border-radius: 10px;
-    /* Rounded edges */
+button:hover {
+    background-color: #21867a;
 }
 
-/* Footer Styling */
 footer {
     text-align: center;
-    background: #d91458;
+    padding: 1rem;
+    background-color: #f4a261;
     color: white;
-    padding: 10px 0;
-    position: fixed;
-    /* Sticks footer to the bottom of the page */
-    bottom: 0;
-    width: 100%;
+    margin-top: 2rem;
 }

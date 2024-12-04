@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Defines the type of document and language as English -->
 
 <head>
     <meta charset="UTF-8">
-    <!-- Specifies the character encoding -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ensures responsive design on mobile devices -->
-    <title>Our Products - Sobolo Store</title>
-    <!-- Title of the products page -->
+    <title>Order Now - Drinks N' Treats</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Links to the CSS file for styling -->
 </head>
 
 <body>
     <header>
-        <!-- Header section -->
-        <h1>Sobolo Store</h1>
-        <!-- Website title -->
+        <h1>Drinks N' Treats</h1>
         <nav>
-            <!-- Navigation links -->
             <a href="index.html">Home</a>
-            <!-- Link to the home page -->
             <a href="products.html">Products</a>
-            <!-- Current page -->
             <a href="contact.html">Contact</a>
-            <!-- Link to the contact page -->
         </nav>
     </header>
 
     <main>
-        <!-- Main content of the page -->
-        <h2>Our Products</h2>
-        <!-- Subtitle -->
-        <section>
-            <!-- Section for a product -->
-            <h3>Sobolo Classic</h3>
-            <!-- Product name -->
-            <img src="images/sobolo_classic.jpg" alt="Sobolo Classic">
-            <!-- Image of the product -->
-            <p>A traditional hibiscus drink made with love.</p>
-            <!-- Short product description -->
-            <p>Price: GHS 5</p>
-            <!-- Product price -->
-        </section>
+        <h2>Order Your Favorites</h2>
+        <form id="orderForm">
+            <!-- Sobolo Drink -->
+            <div class="order-item">
+                <img src="images/sobolo_classic.jpg" alt="Sobolo Classic">
+                <div class="item-details">
+                    <h3>Sobolo Classic</h3>
+                    <p>A traditional hibiscus drink made with love.</p>
+                    <label for="soboloQuantity">Quantity:</label>
+                    <input type="number" id="soboloQuantity" name="soboloQuantity" min="0" value="0">
+                    <p>Price: GHS 5</p>
+                </div>
+            </div>
 
-        <section>
-            <!-- Another product section -->
-            <h3>Sobolo Premium</h3>
-            <img src="images/sobolo_premium.jpg" alt="Sobolo Premium">
-            <p>A refreshing twist with a Pie.</p>
-            <p>Price: GHS 10</p>
-        </section>
+            <!-- Pie -->
+            <div class="order-item">
+                <img src="images/sobolo_premium.jpg" alt="Pie">
+                <div class="item-details">
+                    <h3>Pie</h3>
+                    <p>A fresh, crispy treat to complement your drink.</p>
+                    <label for="pieQuantity">Quantity:</label>
+                    <input type="number" id="pieQuantity" name="pieQuantity" min="0" value="0">
+                    <p>Price: GHS 3</p>
+                </div>
+            </div>
 
-        <a href="contact.html">Order Now</a>
-        <!-- Link to contact page for ordering -->
+            <!-- Total Price -->
+            <div id="totalPriceContainer">
+                <h3>Total Price: <span id="totalPrice">GHS 0</span></h3>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" id="calculatePrice">Calculate Total</button>
+            <button type="submit">Place Order</button>
+        </form>
     </main>
 
     <footer>
-        <!-- Footer section -->
-        <p>© 2024 Sobolo Store</p>
+        <p>© 2025 PINKELLA Drinks N' Treats website</p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

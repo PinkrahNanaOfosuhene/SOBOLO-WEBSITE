@@ -1,0 +1,42 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Get references to the input elements and output containers
+    const soboloQuantityInput = document.getElementById("soboloQuantity");
+    const pieQuantityInput = document.getElementById("pieQuantity");
+    const totalPriceElement = document.getElementById("totalPrice");
+    const calculatePriceButton = document.getElementById("calculatePrice");
+    const orderForm = document.getElementById("orderForm");
+
+    // Prices for items
+    const SOBOLO_PRICE = 5; // Fixed typo
+    const PIE_PRICE = 3;
+
+    // Function to calculate and update total price
+    function calculateTotalPrice() {
+        const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
+        const pieQuantity = parseInt(pieQuantityInput.value) || 0;
+
+        const totalPrice = (soboloQuantity * SOBOLO_PRICE) + (pieQuantity * PIE_PRICE);
+
+        // Update the total price display
+        totalPriceElement.textContent = `GHS ${totalPrice.toFixed(2)}`;
+    }
+
+    // Attach event listener to the "Calculate Total" button
+    calculatePriceButton.addEventListener("click", calculateTotalPrice);
+
+    // Handle form submission
+    orderForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent page refresh
+
+        const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
+        const pieQuantity = parseInt(pieQuantityInput.value) || 0;
+
+        const totalPrice = (soboloQuantity * SOBOLO_PRICE) + (pieQuantity * PIE_PRICE);
+
+        if (totalPrice > 0) {
+            alert(`Order Summary:\n\nSobolo: ${soboloQuantity}\nPie: ${pieQuantity}\nTotal Price: GHS ${totalPrice.toFixed(2)}`);
+        } else {
+            alert("Please select at least one item before placing your order.");
+        }
+    });
+});
