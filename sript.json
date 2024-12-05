@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Get references to the input elements and output containers
+document.addEventListener("DOMContentLoaded", async () => {
     const soboloQuantityInput = document.getElementById("soboloQuantity");
     const pieQuantityInput = document.getElementById("pieQuantity");
     const totalPriceElement = document.getElementById("totalPrice");
@@ -7,34 +6,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const orderForm = document.getElementById("orderForm");
 
     // Prices for items
-    const SOBOLO_PRICE = 5; // Fixed typo
-    const PIE_PRICE = 3;
+    let prices = { sobolo: { price: 5 }, pie: { price: 3 } }; // Defaults
 
-    // Function to calculate and update total price
-    function calculateTotalPrice() {
-        const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
-        const pieQuantity = parseInt(pieQuantityInput.value) || 0;
-
-        const totalPrice = (soboloQuantity * SOBOLO_PRICE) + (pieQuantity * PIE_PRICE);
-
-        // Update the total price display
-        totalPriceElement.textContent = `GHS ${totalPrice.toFixed(2)}`;
+    try {
+        const response = await fetch("prices.json");
+        if (response.ok) {
+            prices = await response.json();
+        } else {
+            console.warn("Using default prices due to loading error.");
+        }
+    } catch (error) {
+        console.error("Error loading prices.json:", error);
     }
 
-    // Attach event listener to the "Calculate Total" button
-    calculatePriceButton.addEventListener("click", calculateTotalPrice);
-
-    // Handle form submission
-    orderForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent page refresh
-
+    const calculateTotalPrice = () => {
         const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
         const pieQuantity = parseInt(pieQuantityInput.value) || 0;
 
-        const totalPrice = (soboloQuantity * SOBOLO_PRICE) + (pieQuantity * PIE_PRICE);
+        const totalPrice =
+            soboloQuantity * prices.sobolo.price + pieQuantity * prices.pie.price;
+
+        totalPriceElement.textContent = `GHS ${totalPrice.toFixed(2)}`;
+    };
+
+    calculatePriceButton.addEventListener("click", calculateTotalPrice);
+
+    orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
+        const pieQuantity = parseInt(pieQuantityInput.value) || 0;
+
+        const totalPrice =
+            soboloQuantity * prices.sobolo.price + pieQuantity * prices.pie.price;
 
         if (totalPrice > 0) {
-            alert(`Order Summary:\n\nSobolo: ${soboloQuantity}\nPie: ${pieQuantity}\nTotal Price: GHS ${totalPrice.toFixed(2)}`);
+            alert(
+                `Order Summary:\n\nSobolo: ${soboloQuantity}\nPie: ${pieQuantity}\nTotal Price: GHS ${totalPrice.toFixed(2)}`
+            );
         } else {
             alert("Please select at least one item before placing your order.");
         }

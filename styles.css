@@ -1,42 +1,111 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #f4a261;
-    color: white;
-    padding: 1rem;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for consistent spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Main Content for Both Index and Product Pages */
+.main-content {
+    flex: 1;
+    padding: 2rem 0;
     text-align: center;
 }
 
-header nav a {
-    color: white;
-    margin: 0 1rem;
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background: #f39c12;
+    color: #fff;
     text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-main {
-    padding: 2rem;
+.btn:hover {
+    background: #e67e22;
 }
 
-form {
-    max-width: 800px;
-    margin: 0 auto;
+/* Featured Image Section */
+.image-section {
+    margin: 2rem 0;
+}
+
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Page Specific Styles */
+#orderForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .order-item {
     display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    width: 80%;
     border: 1px solid #ddd;
-    padding: 1rem;
     border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .order-item img {
-    max-width: 150px;
+    width: 150px;
     height: auto;
     margin-right: 1rem;
     border-radius: 8px;
@@ -47,37 +116,452 @@ form {
 }
 
 .item-details h3 {
-    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }
 
-.item-details label {
-    font-weight: bold;
+.item-details p {
+    margin-bottom: 1rem;
 }
 
 #totalPriceContainer {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+button[type="button"] {
+    background: #f39c12;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 1rem;
+}
+
+button[type="button"]:hover {
+    background-color: #e67e22;
+}
+
+button[type="submit"] {
+    background: #27ae60;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2ecc71;
+}
+
+/* Footer Styles */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+    text-align: center;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    flex: 1;
+    transition: color 0.3s ease;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.nav-item:hover {
+    color: #f39c12;
+}
+
+/* Contact Page Specific Styles */
+main {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #f39c12;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e67e22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .intro h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .order-item img {
+        width: 100px;
+        margin-bottom: 1rem;
+    }
+
+    button[type="button"], button[type="submit"] {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* Adjust contact form */
+    form {
+        padding: 1.5rem;
+    }
+}
+
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ff6b6b; /* Matching the vibrant home screen */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Navigation Bar Styling */
+.header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.header nav a:hover {
+    background-color: #ff4a4a;
+    color: #fff;
+}
+
+.header nav a.active {
+    background-color: #fff;
+    color: #ff6b6b;
+}
+
+/* Main Content */
+.main-content {
+    padding: 2rem;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+}
+
+/* Order Item Styling */
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.item-image {
+    max-width: 120px;
+    border-radius: 8px;
+}
+
+.item-details {
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.item-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.quantity-input {
+    width: 50px;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+/* Total Price Styling */
+.total-price-container {
     text-align: center;
     margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #ff6b6b;
+}
+
+/* Buttons */
+.btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin-right: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4a4a;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* General Reset for Small Screens */
+body {
+    font-size: 16px; /* Ensures legibility on smaller screens */
+}
+
+/* Responsive Header */
+.header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+
+.header nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Main Content */
+.main-content {
+    padding: 1rem;
+}
+
+/* Responsive Order Items */
+.order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.item-image {
+    width: 100%; /* Make images responsive */
+    max-width: 150px;
+    height: auto;
+}
+
+.item-details {
+    margin-left: 0;
+}
+
+.quantity-input {
+    width: 100%;
+    max-width: 60px;
+}
+
+/* Total Price Section */
+.total-price-container {
     font-size: 1.2rem;
 }
 
-button {
-    background-color: #2a9d8f;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
+/* Buttons */
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
 }
 
-button:hover {
-    background-color: #21867a;
+.btn {
+    width: 100%;
+    font-size: 1rem;
 }
 
-footer {
-    text-align: center;
+/* Footer */
+.footer {
     padding: 1rem;
-    background-color: #f4a261;
-    color: white;
-    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .order-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .item-image {
+        max-width: 120px;
+    }
+
+    .header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .total-price-container {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header nav {
+        justify-content: center;
+    }
+
+    .order-item {
+        padding: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .total-price-container {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
 }

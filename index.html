@@ -1,52 +1,61 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<!-- Defines the type of document as HTML5 and sets the language to English -->
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
-    <!-- Specifies the character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <!-- Ensures the website is responsive on all devices -->
-    <title>Sobolo Store</title> 
-    <!-- The title of the page as displayed in the browser tab -->
-    <link rel="stylesheet" href="styles.css"> 
-    <!-- Links to an external CSS file for styling -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobolo Store | Drinks N' Treats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Main content of the web page starts here -->
-    
-    <header>
-        <!-- Defines the header section of the page -->
-        <h1>Drinks N' Treats</h1>
-        <!-- Main title of the website -->
-        <nav>
-            <!-- Navigation menu for linking to other pages -->
-            <a href="index.html">Home</a> 
-            <!-- Link to the home page -->
-            <a href="products.html">Products</a> 
-            <!-- Link to the products page -->
-            <a href="contact.html">Contact</a> 
-            <!-- Link to the contact page -->
-        </nav>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Drinks N' Treats</h1>
+            <p>Your ultimate destination for refreshing Sobolo and more!</p>
+        </div>
     </header>
 
-    <main>
-        <!-- Main content section -->
-        <h2>Drinks N' Treats</h2>
-        <!-- Subtitle or welcome message -->
-        <p>Experience the refreshing taste of homemade Sobolo!</p>
-        <!-- A short paragraph describing the store -->
-        <img src="images/sobolo1.jpg" alt="Sobolo drink">
-        <!-- Displays an image with a description if the image cannot load -->
-        <a href="products.html">Order Your Tasty Sobolo Now</a>
-        <!-- A link to the products page -->
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="container">
+            <section class="intro">
+                <h2>Welcome to Drinks N' Treats</h2>
+                <p>Delight in the refreshing taste of our homemade Sobolo and tasty treats crafted just for you.</p>
+                <a href="products.html" class="btn">Order Your Tasty Sobolo Now</a>
+            </section>
+
+            <section class="image-section">
+                <img src="images/sobolo1.jpg" alt="Sobolo drink" class="featured-image">
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <!-- Footer section of the page -->
-        <p>© 2025 PINKELLA Drinks N' Treats website</p> 
-        <!-- Copyright notice -->
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 PINKELLA Drinks N' Treats. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span>🏠</span>
+            <p>Home</p>
+        </a>
+        <a href="products.html" class="nav-item">
+            <span>🛍️</span>
+            <p>Products</p>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <span>📞</span>
+            <p>Contact</p>
+        </a>
+    </nav>
 </body>
+
 </html>
