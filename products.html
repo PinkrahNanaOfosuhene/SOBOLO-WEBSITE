@@ -12,12 +12,14 @@
 <body>
     <!-- Header Section -->
     <header class="header">
-        <h1>Drinks N' Treats</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="container">
+            <h1>Drinks N' Treats</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -27,37 +29,28 @@
             <form id="orderForm">
                 <!-- Sobolo Classic -->
                 <div class="order-item">
-                    <img src="images/sobolo_classic.jpg" alt="Sobolo Classic" class="item-image">
+                    <img src="images/sobolo_classic.jpg" alt="A refreshing glass of Pineapple Sobolo" class="item-image">
                     <div class="item-details">
                         <h3>Sobolo Classic</h3>
-                        <p>A traditional hibiscus drink made with love.</p>
-                        <label for="soboloQuantity">Quantity:</label>
-                        <input type="number" id="soboloQuantity" name="soboloQuantity" min="0" value="0" class="quantity-input">
+                        <p>Pineapple Sobolo</p>
                         <p>Price: GHS 5</p>
                     </div>
                 </div>
 
                 <!-- Pie -->
                 <div class="order-item">
-                    <img src="images/sobolo_premium.jpg" alt="Pie" class="item-image">
+                    <img src="images/sobolo_premium.jpg" alt="A fresh Meat Pie" class="item-image">
                     <div class="item-details">
                         <h3>Pie</h3>
-                        <p>A fresh, crispy treat to complement your drink.</p>
-                        <label for="pieQuantity">Quantity:</label>
-                        <input type="number" id="pieQuantity" name="pieQuantity" min="0" value="0" class="quantity-input">
+                        <p>A fresh, Meat Pie</p>
                         <p>Price: GHS 3</p>
                     </div>
                 </div>
 
-                <!-- Total Price -->
-                <div id="totalPriceContainer" class="total-price-container">
-                    <h3>Total Price: <span id="totalPrice">GHS 0</span></h3>
-                </div>
-
                 <!-- Buttons -->
                 <div class="form-buttons">
-                    <button type="button" id="calculatePrice" class="btn">Calculate Total</button>
-                    <button type="submit" class="btn">Place Order</button>
+                    <!-- Change the "Place Order" button to a link to the contact page -->
+                    <a href="contact.html" class="btn">Place Order</a>
                 </div>
             </form>
         </div>
@@ -65,7 +58,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2025 PINKELLA Drinks N' Treats. All rights reserved.</p>
+        <div class="container">
+            <p>© 2025 PINKELLA Drinks N' Treats. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- JavaScript -->
@@ -73,4 +68,3 @@
 </body>
 
 </html>
-

@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const calculatePriceButton = document.getElementById("calculatePrice");
     const orderForm = document.getElementById("orderForm");
 
-    // Prices for items
-    let prices = { sobolo: { price: 5 }, pie: { price: 3 } }; // Defaults
+    // Prices for items (default)
+    let prices = { sobolo: { price: 5 }, pie: { price: 3 } }; 
 
     try {
         const response = await fetch("prices.json");
@@ -23,16 +23,38 @@ document.addEventListener("DOMContentLoaded", async () => {
         const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
         const pieQuantity = parseInt(pieQuantityInput.value) || 0;
 
+        // Make sure both quantities are non-negative integers
+        if (soboloQuantity < 0 || pieQuantity < 0) {
+            alert("Quantity cannot be negative. Please enter valid quantities.");
+            return;
+        }
+
         const totalPrice =
             soboloQuantity * prices.sobolo.price + pieQuantity * prices.pie.price;
 
         totalPriceElement.textContent = `GHS ${totalPrice.toFixed(2)}`;
     };
 
+    // Enable or disable the Calculate button based on input
+    const toggleCalculateButtonState = () => {
+        const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
+        const pieQuantity = parseInt(pieQuantityInput.value) || 0;
+
+        // Enable the button only if there is at least one quantity greater than 0
+        calculatePriceButton.disabled = !(soboloQuantity > 0 || pieQuantity > 0);
+    };
+
+    // Initial button state
+    toggleCalculateButtonState();
+
+    soboloQuantityInput.addEventListener("input", toggleCalculateButtonState);
+    pieQuantityInput.addEventListener("input", toggleCalculateButtonState);
+
     calculatePriceButton.addEventListener("click", calculateTotalPrice);
 
     orderForm.addEventListener("submit", (event) => {
         event.preventDefault();
+
         const soboloQuantity = parseInt(soboloQuantityInput.value) || 0;
         const pieQuantity = parseInt(pieQuantityInput.value) || 0;
 

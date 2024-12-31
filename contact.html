@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Defines the type of document and language -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +25,7 @@
             <p>Got questions? Want to place an order? Fill out the form below to reach out!</p>
         </div>
 
-        <!-- Form -->
+        <!-- Order Form -->
         <form action="https://formspree.io/f/xkgnypjn" method="POST">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
@@ -35,15 +33,65 @@
             <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="phone">Your Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{1,4}?[-.●]?[0-9]{1,15}$" required placeholder="e.g. +233-123-456-789">
+            <small>Enter your phone number</small>
 
-            <button type="submit">Send Message</button>
+            <div class="order-items">
+                <!-- Sobolo Classic -->
+                <div class="order-item">
+                    <h3>Sobolo Classic</h3>
+                    <p>Pineapple Sobolo</p>
+                    <label for="soboloQuantity">Quantity:</label>
+                    <input type="number" id="soboloQuantity" name="soboloQuantity" min="0" value="0" class="quantity-input">
+                    <p>Price: GHS 5</p>
+                </div>
+
+                <!-- Pie -->
+                <div class="order-item">
+                    <h3>Pie</h3>
+                    <p>A fresh, Meat Pie</p>
+                    <label for="pieQuantity">Quantity:</label>
+                    <input type="number" id="pieQuantity" name="pieQuantity" min="0" value="0" class="quantity-input">
+                    <p>Price: GHS 3</p>
+                </div>
+            </div>
+
+            <!-- Hidden Total Price Field -->
+            <input type="hidden" id="totalPriceHidden" name="totalPrice" value="0">
+
+            <!-- Total Price -->
+            <div id="totalPriceContainer" class="total-price-container">
+                <h3>Total Price: <span id="totalPrice">GHS 0</span></h3>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-buttons">
+                <button type="button" id="calculatePrice" class="btn">Calculate Total</button>
+                <button type="submit" class="btn">Send Order</button>
+            </div>
         </form>
     </main>
 
     <footer class="footer">
         <p>© 2025 PINKELLA Drinks N' Treats website</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("calculatePrice").addEventListener("click", function () {
+            var soboloQuantity = document.getElementById("soboloQuantity").value;
+            var pieQuantity = document.getElementById("pieQuantity").value;
+
+            var soboloPrice = 5;
+            var piePrice = 3;
+
+            var totalPrice = (soboloQuantity * soboloPrice) + (pieQuantity * piePrice);
+            document.getElementById("totalPrice").textContent = "GHS " + totalPrice;
+
+            // Set the hidden field value
+            document.getElementById("totalPriceHidden").value = totalPrice;
+        });
+    </script>
 </body>
 </html>
