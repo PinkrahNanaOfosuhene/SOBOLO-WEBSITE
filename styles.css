@@ -565,3 +565,75 @@ body {
         font-size: 1.3rem;
     }
 }
+
+
+/* Location and Working Hours Section */
+.location-hours, .location-footer {
+    margin-top: 2rem;
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.location-hours:hover, .location-footer:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hover effect for better interaction */
+}
+
+.location-hours h3, .location-footer h3 {
+    color: #ff6b6b;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.location-hours p, .location-footer p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333; /* Slightly darker color for better readability */
+}
+
+.location-footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.location-footer ul li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555; /* Lighter color for less important text */
+}
+
+/* Google Maps iframe */
+.location-hours iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.location-hours iframe:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adding hover effect to iframe */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .location-hours, .location-footer {
+        padding: 1.5rem;
+    }
+
+    .location-hours h3, .location-footer h3 {
+        font-size: 1.5rem;
+    }
+
+    .location-hours iframe {
+        height: 250px;
+    }
+
+    .location-footer ul li {
+        font-size: 0.95rem;
+    }
+}
